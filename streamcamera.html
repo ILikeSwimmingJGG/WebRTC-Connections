@@ -11,19 +11,19 @@ Stream Camera
 <script>
 'use strict';
 const mediaStreamConstraints = {
-video: true,
+  video: true,
 };
 const localVideo = document.querySelector('video');
 let localStream;
 function gotLocalMediaStream(mediaStream) {
-localStream = mediaStream;
-localVideo.srcObject = mediaStream;
+  localStream = mediaStream;
+  localVideo.srcObject = mediaStream;
 }
 function handleLocalMediaStreamError(error) {
-console.log('error', error);
+  console.log('error ', error);
 }
 navigator.mediaDevices.getUserMedia(mediaStreamConstraints)
-.then(gotLocalMediaStream).cath(handleLocalMediaStreamError);
+  .then(gotLocalMediaStream).catch(handleLocalMediaStreamError);
 //thats it to just capture your camera :) have fun and take care for now
 </script>
 </body>
